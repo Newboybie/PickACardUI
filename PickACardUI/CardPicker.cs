@@ -13,7 +13,7 @@ namespace PickACardUI
         public static string[] PickSomeCards(int numberOfCards)
         {
             string[] pickerCards = new string[numberOfCards];
-            for (int i = 0; i < numberOfCards; i++)
+            for (int i = 0; i < numberOfCards; i+=1)
             {
                 pickerCards[i] = RandomValue() + " of " + RandomSuit();
             }
@@ -22,7 +22,8 @@ namespace PickACardUI
 
         private static string RandomSuit()
         {
-            int value = random.Next(1, 5);
+            int maxValue = 5;
+            int value = random.Next(1, maxValue);
             if (value == 1) return "Spades";
             if (value == 2) return "Hearts";
             if (value == 3) return "Clubs";
